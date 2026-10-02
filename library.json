@@ -1,0 +1,23 @@
+{
+    "name": "Rotary encoder",
+    "version": "1.0.0",
+    "description": "A libary for Rotary encoders",
+    "keywords": [
+        "rotary",
+        "encoder",
+        "arduino",
+        "esp32"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sam8poop/Rotary_encoder"
+    },
+    "authors": [
+        {
+            "name": "chase bridger"
+        }
+    ],
+    "license": "MIT",
+    "frameworks": "arduino",
+    "platforms": "*"
+}
