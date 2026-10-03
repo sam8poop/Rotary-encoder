@@ -3,7 +3,8 @@
 
 #include <Arduino.h>
 
-class Rotary_encoder {
+class Rotary_encoder
+{
 private:
   uint8_t clk;
   uint8_t dt;
@@ -13,18 +14,17 @@ private:
   volatile uint8_t ls;
   volatile int32_t pos = 0;
 
-  static void IRAM_ATTR encoderISR(void* arg);
+  static void IRAM_ATTR encoderISR(void *arg);
 
 public:
-
   Rotary_encoder(
-    uint8_t clock_pin,
-    uint8_t data_pin,
-    uint8_t switch_pin
-  );
+      uint8_t clock_pin,
+      uint8_t data_pin,
+      uint8_t switch_pin);
 
   void begin();
   int32_t get_pos();
+  bool get_switch();
 };
 
 #endif

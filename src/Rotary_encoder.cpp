@@ -82,3 +82,6 @@ int32_t Rotary_encoder::get_pos() {
 
   return current_pos;
 }
+bool Rotary_encoder::get_switch() {
+  return !digitalRead(sw);
+}
