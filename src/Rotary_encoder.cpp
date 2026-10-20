@@ -71,19 +71,19 @@ void Rotary_encoder::begin() {
     CHANGE
   );
 }
-int32_t Rotary_encoder::get_pos(bool Print) {
+int32_t Rotary_encoder::get_pos(bool Check) {
   noInterrupts();
   int32_t current_pos = pos;
-  if (Print == true) {
-    if (pos != last_pos) {
-      Serial.print("Pos: ");
-      Serial.println(pos);
-    }
-    last_pos = pos;
-  }
   interrupts();
+  if (Check == true) {
+    if (current_pos != last_pos) {
+      return current_pos;
+    }
+    last_pos = current_pos;
+  } else {
+    return current_pos;
+  }
 
-  return current_pos;
 }
 bool Rotary_encoder::get_switch() {
   return !digitalRead(sw);
