@@ -82,10 +82,8 @@ int32_t Rotary_encoder::get_pos(String Print_prepend) {
       Serial.println(current_pos);
     }
     last_pos = current_pos;
-  } else {
-    return current_pos;
   }
-
+  return current_pos;
 }
 bool Rotary_encoder::get_switch() {
   return !digitalRead(sw);
