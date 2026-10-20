@@ -81,7 +81,9 @@ int32_t Rotary_encoder::get_pos() {
 bool Rotary_encoder::get_switch() {
   return !digitalRead(sw);
 }
-void reset_pos() {
+void Rotary_encoder::reset_pos() {
+  noInterrupts();
   pos = 0;
+  changes = 0;
+  interrupts();
 }
-
