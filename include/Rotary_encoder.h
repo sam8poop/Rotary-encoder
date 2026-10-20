@@ -6,6 +6,7 @@
 class Rotary_encoder
 {
 private:
+  uint32_t last_pos = 0;
   uint8_t clk;
   uint8_t dt;
   uint8_t sw;
@@ -23,7 +24,7 @@ public:
       uint8_t switch_pin);
 
   void begin();
-  int32_t get_pos();
+  int32_t get_pos(bool Print = false);
   bool get_switch();
   void reset_pos();
 };

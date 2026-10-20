@@ -71,9 +71,16 @@ void Rotary_encoder::begin() {
     CHANGE
   );
 }
-int32_t Rotary_encoder::get_pos() {
+int32_t Rotary_encoder::get_pos(bool Print) {
   noInterrupts();
   int32_t current_pos = pos;
+  if (Print == true) {
+    if (pos != last_pos) {
+      Serial.print("Pos: ");
+      Serial.println(pos);
+    }
+    last_pos = pos;
+  }
   interrupts();
 
   return current_pos;
