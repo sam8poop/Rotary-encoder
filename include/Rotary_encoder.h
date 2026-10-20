@@ -25,6 +25,7 @@ public:
   void begin();
   int32_t get_pos();
   bool get_switch();
+  void reset_pos();
 };
 
 #endif

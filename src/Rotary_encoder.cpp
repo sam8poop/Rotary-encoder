@@ -41,8 +41,6 @@ void IRAM_ATTR Rotary_encoder::encoderISR(void* arg) {
     encoder->changes = 0;
   }
 }
-
-
 Rotary_encoder::Rotary_encoder(
   uint8_t clock_pin,
   uint8_t data_pin,
@@ -58,8 +56,6 @@ Rotary_encoder::Rotary_encoder(
 
   ls = (digitalRead(clk) << 1) | digitalRead(dt);
 }
-
-
 void Rotary_encoder::begin() {
   attachInterruptArg(
     digitalPinToInterrupt(clk),
@@ -85,3 +81,7 @@ int32_t Rotary_encoder::get_pos() {
 bool Rotary_encoder::get_switch() {
   return !digitalRead(sw);
 }
+void reset_pos() {
+  pos = 0;
+}
+
