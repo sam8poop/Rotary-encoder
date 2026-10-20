@@ -24,7 +24,7 @@ public:
       uint8_t switch_pin);
 
   void begin();
-  int32_t get_pos(bool Check = false);
+  int32_t get_pos(String Print_prepend = "");
   bool get_switch();
   void reset_pos();
 };
